@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="page2.css">
+
+</head>
+
+<body>
+    
+    <script src="socket.js" charset="UTF-8" type="text/javascript"></script>
+
+    <!--ส่วนหัว-->
+    <div class="mainPDF">
+        <div id="topic-header-text">
+            <h1>ผลการวัดค่ามวลร่างกาย</h1>
+            <p class="text-name-page2" id="name_result">-</p>
+        </div>
+
+        <!--ส่วนแสดงข้อมูล แบบ expansion panel(collapsible)-->
+        <div class="container">
+            <!-------------------------------------1.ข้อมูลทั่วไป--------------------------------------->
+            <button type="button" class="collapsible">ข้อมูลทั่วไป</button>
+            <div class="content">
+                <div class="my-container1-page2">
+                    <div class="data-table1" id="text-data">
+                        <i class="far fa-calendar-alt"></i>
+                        <h1>วันที่: </h1>
+                        <p class="text-date" id="date">-</p>
+                    </div>
+                    <div class="data-table1" id="text-data">
+                        <i class="fas fa-key"></i>
+                        <h1>ID: </h1>
+                        <p class="text-ID" id="id">-</p>
+                    </div>
+                    <div class="data-table1" id="text-data">
+                        <i class="fas fa-user-friends"></i>
+                        <h1>อายุ:</h1>
+                        <p class="text-age" id="age">-</p>
+                    </div>
+                    <div class="data-table1" id="text-data">
+                        <i class="fas fa-male"></i>
+                        <i class="fas fa-arrows-alt-v"></i>
+                        <h1>ความสูง:</h1>
+                        <p class="text-height" id="height">-</p>
+                    </div>
+                    <div class="data-table1" id="text-data">
+                        <i class="fas fa-tshirt"></i>
+                        <h1>น้ำหนักเสื้อผ้า:</h1>
+                        <p class="text-clothweight" id="cloth_weight">-</p>
+                    </div>
+                    <div class="data-table1" id="text-data">
+                        <i class="fas fa-user-alt"></i>
+                        <h1>ลักษณะร่างกาย:</h1>
+                        <p class="text-bodytype" id="athelete">-</p>
+                    </div>
+                    <div class="data-table1" id="text-data">
+                        <i class="fas fa-restroom"></i>
+                        <h1>เพศ:</h1>
+                        <p class="text-sex" id="sex">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------------------2.ผลวิเคราะห์รวม------------------------------------>
+            <button type="button" class="collapsible">ผลวิเคราะห์รวม</button>
+            <div class="content">
+                <div class="my-container2-page2">
+                    <div class="table-responsive-sm table-bordered">
+                        <table id="table1">
+                            <thead>
+                                <tr id="table1-row-head">
+                                    <th> </th>
+                                    <th>ผลลัพธ์การวิเคราะห์</th>
+                                    <th>ค่าที่เหมาะสม</th>
+                                    <th>เป้าหมาย</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <!--แสดงค่า Body Weight-->
+                            <tbody>
+                                <tr>
+                                    <td id="table1-column-head">
+                                       น้ำหนัก
+                                    </td>
+                                    <td id="body-weight">kg</td>
+                                    <td id="desirable-body-weight">? kg</td>
+                                    <td id="target-body-weight">? kg</td>
+                                    <td id="last-column-body-weight">? kg</td>
+                                </tr>
+                            </tbody>
+                            <!--แสดงค่า Fat-->
+                            <tbody>
+                                <tr id="table1-row">
+                                    <td id="table1-column-head">
+                                        % ไขมัน
+                                    </td>
+                                    <td id="fat-percent">%</td>
+                                    <td id="desirable-fat-percent">? %</td>
+                                    <td id="target-fat-percent">? %</td>
+                                    <td id="last-column-fat-percent">? %</td>
+                                </tr>
+                            </tbody>
+                            <!--แสดงค่า Fat Mass-->
+                            <tbody>
+                                <tr id="table1-row">
+                                    <td id="table1-column-head">
+                                       มวลไขมัน
+                                    </td>
+                                    <td id="fat-mass">? kg</td>
+                                    <td id="desirable-fat-mass">? kg</td>
+                                    <td id="target-fat-mass">? kg</td>
+                                    <td id="last-column-fat-mass">? kg</td>
+                                </tr>
+                            </tbody>
+                            <!--แสดงค่า Fat Mass-->
+                            <tbody>
+                                <tr id="table1-row">
+                                    <td id="table1-column-head">
+                                        มวลกล้ามเนื้อ
+                                    </td>
+                                    <td id="muscle-mass">? kg</td>
+                                    <td id="desirable-muscle-mass">? kg</td>
+                                    <td id="target-muscle-mass">?</td>
+                                    <td id="last-column-muscle-mass">?</td>
+                                </tr>
+                            </tbody>
+                            <!--แสดงค่า Bone Mass-->
+                            <tbody>
+                                <tr id="table1-row">
+                                    <td id="table1-column-head">
+                                      มวลกระดูก
+                                    </td>
+                                    <td id="bone-mass">? kg</td>
+                                    <td id="desirable-bone-mass">?</td>
+                                    <td id="target-bone-mass">?</td>
+                                    <td id="last-column-bone-mass">?</td>
+                                </tr>
+                            </tbody>
+                            <!--แสดงค่า ฺBMI-->
+                            <tbody>
+                                <tr id="table1-row">
+                                    <td id="table1-column-head">
+                                        ฺดัชนีมวลกาย
+                                    </td>
+                                    <td id="bmi">?</td>
+                                    <td id="desirable-bmi">?</td>
+                                    <td id="target-bmi">?</td>
+                                    <td id="last-column-bmi">?</td>
+                                </tr>
+                            </tbody>
+                            <!--แสดงค่า Metabolic Age-->
+                            <tbody>
+                                <tr id="table1-row">
+                                    <td id="table1-column-head">
+                                        พลังงานขั้นพื้นฐานเทียบอายุ
+                                    </td>
+                                    <td id="metabolic-age">?</td>
+                                    <td></td>
+                                    <!--Don't Use-->
+                                    <td></td>
+                                    <!--DOn't Use-->
+                                    <td></td>
+                                    <!--Don't Use-->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!------------------------------------3.ข้อมูลชุดที่ 3--------------------------------------->
+            <button type="button" class="collapsible">TBW - ECW/TBW - BMR - VFR</button>
+            <div class="content">
+                <div class="my-container3-page2">
+                    <div class="table-responsive-sm table-bordered">
+                        <table id="table2">
+                            <tbody>
+                                <tr>
+                                    <td id="table2-column1-row1">ปริมาณน้ำรวมในร่างกาย(TBW)</td>
+                                    <td class="table2-column2-row1">
+                                        <table class="table2-column2-row1">
+                                            <tbody>
+                                                <tr>
+                                                    <th id="tbw-kg">? kg</th>
+                                                </tr>
+                                                <tr>
+                                                    <th id="tbw-percent">? %</th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="table2-column3-row1">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="table2-column3-row1-th-text-1">น้ำนอกเซลล์(ECW)</th>
+                                                    <td class="table2-column3-row1-td-text-1" id="ecw">?</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="table2-column3-row1-th-text-2">น้ำในเซลล์(ICW)</th>
+                                                    <td class="table2-column3-row1-td-text-2" id="icw">?</td>
+                                                </tr>
+                                            </tbody>
+                                            
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td id="table2-column1-row2">ปริมาณน้ำนอกเซลล์ต่อปริมาณน้ำรวมในร่างกาย(ECW/TBW)</td>
+                                    <td class="table2-column2-row2">
+                                        <table class="table2-column2-row2">
+                                            <tbody>
+                                                <tr>
+                                                    <th id="ecwtbw-percent">? %</th>
+                                                </tr>
+                                            </tbody>
+                                            
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table>
+                                            <tbody>
+                                                <tr class="column3">
+                                                    <th class="table2-column3-row2">
+                                                        <div class="progress-text-1">
+                                                            <p class="progress-ecwtbw-percent" id="progress-ecwtbw-percent">
+                                                                ?
+                                                            </p>
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                            </tbody>
+                                       
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tr>
+                                <td id="table2-column1-row3">อัตราการเผาผลาญพลังงานขั้นพื้นฐาน(BMR)</td>
+                                <td class="table2-column2-row3 ">
+                                    <table class="table2-column2-row3">
+                                        <tbody>
+                                            <tr>
+                                                <th id="bmr-kj">? kJ</th>
+                                            </tr>
+                                            <tr>
+                                                <th id="bmr-kcal">? kcal</th>
+                                            </tr>
+                                        </tbody>
+                                        
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                            <tr class="column3">
+                                                <th class="table2-column3-row3">
+                                                    <div class="progress-text-2">
+                                                        <p class="progress-bmr" id="progress-bmr">?</p>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </tbody>                  
+                                    </table>
+                                </td>
+                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td id="table2-column1-row4">Viserral Fat Rating</td>
+                                    <td class="table2-column2-row4">
+                                        <table class="table2-column2-row4">
+                                            <td id="viserral-fat-rating">
+                                                ?
+                                            </td>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table>
+                                            <tr class="column3">
+                                                <th class="table2-column3-row4">
+                                                    <div class="prograss-text-3">
+                                                        <p class="progress-viserral-fat-rating"
+                                                            id="progress-viserral-fat-rating">?</p>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="collapsible">ผลวิเคราะห์แยกส่วน</button>
+            <div class="content">
+                <!-------------------------------------ข้อมูลชุดที่ 4--------------------------------------->
+                <div class="my-container4-page2 row">
+                    <div class="card3-1">
+                        <img class="image-page2-dashboard-muscle" src="assets/images/dashboard_muscle.png" alt="dashboard_muscle">
+                        <div class="top-left-1" id="top-left-muscle">Value1</div>
+                        <div class="top-right-1" id="top-right-muscle">Value2</div>
+                        <div class="bottom-left-1" id="bottom-left-muscle">Value3</div>
+                        <div class="bottom-right-1" id="bottom-right-muscle">Value4</div>
+                        <div class="top-center-1" id="top-center-muscle">Value5</div>
+                    </div>
+                    <div class="card3-2">
+                        <img class="image-page2-dashboard-fat" src="assets/images/dashboard_fat.png" alt="dashboard_fat">
+                        <div class="top-left-2" id="top-left-trunk">Value1</div>
+                        <div class="top-right-2" id="top-right-trunk">Value2</div>
+                        <div class="bottom-left-2" id="bottom-left-trunk">Value3</div>
+                        <div class="bottom-right-2" id="bottom-right-trunk">Value4</div>
+                        <div class="top-center-2" id="top-center-trunk">Value5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--button download to pdf-->
+    <div class="grid-container">
+        <button class="button-download-pdf-page2" type="submit" id="getPDF">
+            Download PDF
+        </button>
+    </div>
+
+    <div class="navbar">
+        <a class="text-footer-1" href="page3.html">ต้องการส่งข้อมูลไปยังอีเมล์ของท่าน?</a>
+        <a class="text-footer-2" href="page1.html">เสร็จสิ้น</a>
+    </div>
+    
+    
+    <!--Expansion Panel Setting-->
+    <script src="jquery.min.js"></script>
+    <script src="printThis.js"></script>
+    <script>
+        $('#getPDF').click(function () {
+            $('.mainPDF').printThis(
+                {
+                    debug: false,               // show the iframe for debugging
+                    importCSS: true,            // import parent page css
+                    importStyle: false,         // import style tags
+                    printContainer: true,       // print outer container/$.selector
+                    loadCSS: "C:/Users/WTB/Desktop/HTML/project_tanita/page2.css",                // path to additional css file - use an array [] for multiple
+                    //pageTitle: "Print my Document",              // add title to print page
+                    removeInline: false,        // remove inline styles from print elements
+                    removeInlineSelector: "*",  // custom selectors to filter inline styles. removeInline must be true
+                    printDelay: 1000,            // variable print delay
+                    //header: "<h1 class='w3-center'>Print my Document</h1>",               // prefix to html
+                    footer: null,               // postfix to html
+                    base: false,                // preserve the BASE tag or accept a string for the URL
+                    formValues: true,           // preserve input/form values
+                    canvas: false,              // copy canvas content
+                    doctypeString: '<!DOCTYPE html>', // enter a different doctype for older markup
+                    removeScripts: false,       // remove script tags from print content
+                    copyTagClasses: false,      // copy classes from the html & body tag
+                    beforePrintEvent: null,     // callback function for printEvent in iframe
+                    beforePrint: null,          // function called before iframe is filled
+                    afterPrint: null            // function called before iframe is removed
+                }
+            );
+        })
+    </script>
+   
+    <script src="collapsible.js"></script>
+</body>
+
+</html>

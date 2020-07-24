@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
+    <link rel="stylesheet" href="page1.css">
+    <!--
+     <link href="form-validation.css" rel="stylesheet">
+    -->
+    <link rel="stylesheet" href="/loader.css">
+    
+</head>
+
+<body>
+   
+    <img class="image-page1" src="assets/images/logo.png" alt="logo">
+    <h1 class="header-page1"><b>WELCOME TO SCALA</b></h1>
+    <div class="container">
+        <!-- card กล่องข้อความ-->
+        <div class="my-container-page1 shadow">
+            <!--กรอกกชื่อนามสกุล -->
+            <form id="addPost" >
+            <div class="textfield-name-page1">
+                <input type="text" class="form-control form-element" id="Name" placeholder="ชื่อ-นามสกุล">
+            </div>
+             <!--กรอกอายุ-->
+            <div class="textfield-age-page1">
+                    <input type="text" class="form-control form-element" id="Age" placeholder="อายุ" > 
+            </div>
+            <!--กรอกเพศ-->
+            <div class="combobox-sex-page1">
+                <select id="Sex" class="form-control form-element" >
+                    <option selected>--เลือกเพศของท่าน--</option>
+                    <option value="male">เพศชาย</option>
+                    <option value="female">เพศหญิง</option>
+                </select>
+            </div>
+            <!--กรอกส่วนสูง-->
+            <div class="textfield-height-page1">
+                <input type="text" class="form-control form-element" id="Height" placeholder="ส่วนสูง(เซนติเมตร) " value="">
+            </div>
+            <!--กรอกน้ำหนักเสื้อผ้า-->
+            <div class="textfield-clothweight-page1">
+                <input type="text" class="form-control form-element" id="Cloth" placeholder="น้ำหนักเสื้อผ้า(กิโลกรัม)" value="">
+            </div>
+            <!--กรอกลักษณะร่างกาย-->
+            <div class="combobox-bodytype-page1">
+                <select id="Athelete" class="form-control form-element">
+                    <option selected>--เลือกลักษณะร่างกายของท่าน--</option>
+                    <option value="standard">ร่างกายปกติ</option>
+                    <option value="athletic">นักกีฬา</option>
+                </select>
+            </div>
+            <!--กรอก ID-->
+            <div class="textfield-id-page1">
+                <input type="text" class="form-control form-element" id="InputID" placeholder="กรุณาตั้ง ID ของท่าน เช่น 1234"
+                    value="" >
+            </div>
+        </div>
+    </div>
+    <!--ปุ่ม ตกลง-->
+    <button class="button-page1 shadow" id="bmi" type="submit" onclick="return check();">ตกลง</button>
+    <!--Checkbox-->
+</form>
+    <div class="container">
+        <div class="checkbox-page1 mt-2">
+            <input type="checkbox" id="checkbox"> ข้าพเจ้ายินยอมรับ<u>ข้อกำหนดการให้บริการ</u>
+        </div>
+    </div>
+    <script src="api.js" type ="text/javascript" charset="UTF-8"></script>
+    
+</body>
+
+</html>
